@@ -44,6 +44,8 @@ namespace CleanArch.MVC
                   Configuration.GetConnectionString("UniversityConnection")));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            RegisterServices(services);
         }
 
         public static void RegisterServices(IServiceCollection services)
