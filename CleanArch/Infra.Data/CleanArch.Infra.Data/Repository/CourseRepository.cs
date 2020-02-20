@@ -9,6 +9,7 @@ namespace CleanArch.Infra.Data.Repository
     {
         private readonly UniversityDbContext dbContext;
 
+
         public CourseRepository(UniversityDbContext dbContext)
         {
             this.dbContext = dbContext;
