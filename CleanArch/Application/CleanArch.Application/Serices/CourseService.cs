@@ -19,10 +19,12 @@ namespace CleanArch.Application.Serices
 
         public void CreateCourse(CoursesViewModel model)
         {
-            var createCourseCommand = new CreateCourseCommand
-            (model.Name, model.Description, model.ImageUrl);
+            var createCourseCommand =
+                new CreateCourseCommand(model.Name, model.Description, model.ImageUrl);
 
-            _bus.SendCommand(createCourseCommand);
+            _bus.SendCommand(createCourseCommand)
+                .GetAwaiter()
+                .GetResult();
         }
 
         public CoursesViewModel GetCourses()

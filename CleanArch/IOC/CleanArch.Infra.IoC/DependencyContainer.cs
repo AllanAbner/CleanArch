@@ -17,7 +17,7 @@ namespace CleanArch.Infra.IoC
         public static void RegisterServices(IServiceCollection services)
         {
             //Domain InMemory MediatR
-            services.AddSingleton<IMediatorHandler, InMemoryBus>();
+            services.AddScoped<IMediatorHandler, InMemoryBus>();
 
             //Domain Handlers
             services.AddScoped<IRequestHandler<CreateCourseCommand, bool>, CourseCommandHandler>();
