@@ -1,6 +1,7 @@
 ﻿using CleanArch.Infra.Data.Context;
 using CleanArch.Infra.IoC;
 using CleanArch.MVC.Data;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -44,6 +45,9 @@ namespace CleanArch.MVC
                   Configuration.GetConnectionString("UniversityConnection")));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.AddMediatR(typeof(Startup));
+
 
             RegisterServices(services);
         }
